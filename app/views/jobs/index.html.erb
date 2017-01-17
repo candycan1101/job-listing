@@ -1,3 +1,6 @@
+
+<h1 align="center">Find A Good Job Here</h1>
+<a href="/">Job listing</a>
 <div class="pull-right">
   <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
 </div>
@@ -24,6 +27,7 @@
   <thead>
     <tr>
       <td>职缺</td>
+
       <td>薪资上限</td>
       <td>薪资下限</td>
       <td>刊登时间</td>
@@ -45,12 +49,7 @@
       <%= job.created_at %>
     </td>
 
-    <td>
-      <%= link_to("Edit", edit_admin_job_path(job)) %>
-      <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
-
-
-    </td>
+    
 
   </tr>
   <% end %>
