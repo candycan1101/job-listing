@@ -1,4 +1,4 @@
-<body style="background-color:aliceblue">
+<body style="background-color:white">
 </body>
 
 <h2 align="center", style="color:#5BBD9A"> Find An Amazing Opportunity Here</h2>
@@ -26,12 +26,12 @@
 </div>
 
 <div class="panel-body">
-  <table class="table table-striped table-bordered table-list">
+  <table class="table table-striped table-list">
 
   <thead>
     <tr>
       <td>Jobs</td>
-
+      <td>Location</td>
       <td>Min. Salary</td>
       <td>Max. Salary</td>
       <td>Created at</td>
@@ -42,6 +42,9 @@
     <tr>
       <td>
         <%= link_to(job.title, job_path(job)) %>
+      </td>
+      <td>
+        <%= job.job_location %>
       </td>
       <td>
         <%= job.wage_lower_bound %>
