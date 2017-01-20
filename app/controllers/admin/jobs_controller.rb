@@ -1,7 +1,7 @@
 class Admin::JobsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   before_filter :require_is_admin
-  layout "admin"
+  
 
 
 def show
@@ -56,7 +56,7 @@ def hide
   @job.hide!
 
   redirect_to :back
-end 
+end
 
 private
 def job_params
