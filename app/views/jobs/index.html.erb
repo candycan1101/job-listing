@@ -1,38 +1,40 @@
-<body style="background-color:lightgrey">
+<body style="background-color:aliceblue">
 </body>
 
-<h1 align="center", style="color:darkblue"> Find A Good Job Here</h1>
+<h2 align="center", style="color:#5BBD9A"> Find An Amazing Opportunity Here</h2>
 
 <div class="pull-right">
-  <%= link_to("Add a job", new_job_path, :class => "btn btn-default") %>
+  <%= link_to("Add a job", new_job_path, :class => "btn btn-default", :style =>"background-color:#008F5D") %>
 </div>
 
 <div class="dropdown clearfix pull-right">
-  <button class="btn btn-default dropdown-toggle" type="button" style="background-color:write" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    排序
+  <button class="btn btn-default dropdown-toggle" type="button" style="background-color:#008F5D" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Sort
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
     <li>
-      <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+      <%= link_to("By Lower to Upper", jobs_path(:order => "by_lower_bound")) %>
     </li>
     <li>
-      <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+      <%= link_to("By Upper to Lower", jobs_path(:order => "by_upper_bound")) %>
     </li>
     <li>
-      <%= link_to("按照发表时间排序", jobs_path ) %>
+      <%= link_to("By create time", jobs_path ) %>
     </li>
   </ul>
 </div>
 
-<table class="table table-boldered">
+<div class="panel-body">
+  <table class="table table-striped table-bordered table-list">
+
   <thead>
     <tr>
-      <td>职缺</td>
+      <td>Jobs</td>
 
-      <td>薪资上限</td>
-      <td>薪资下限</td>
-      <td>刊登时间</td>
+      <td>Min. Salary</td>
+      <td>Max. Salary</td>
+      <td>Created at</td>
     </tr>
   </thead>
   <tbody>
