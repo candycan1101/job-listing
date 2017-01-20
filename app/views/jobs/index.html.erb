@@ -14,10 +14,10 @@
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
     <li>
-      <%= link_to("By Lower to Upper", jobs_path(:order => "by_lower_bound")) %>
+      <%= link_to("By Min. Salary", jobs_path(:order => "by_lower_bound")) %>
     </li>
     <li>
-      <%= link_to("By Upper to Lower", jobs_path(:order => "by_upper_bound")) %>
+      <%= link_to("By Max. Salary", jobs_path(:order => "by_upper_bound")) %>
     </li>
     <li>
       <%= link_to("By create time", jobs_path ) %>
@@ -59,7 +59,3 @@
   <% end %>
 </tbody>
 </table>
-
-<div class="text-center">
-  <%= will_paginate @jobs %>
-</div>
