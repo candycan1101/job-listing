@@ -7,7 +7,7 @@ class JobsController < ApplicationController
     if @job.is_hidden
       flash[:warning] = "This Job already archieved"
       redirect_to root_path
-    end 
+    end
   end
 
   def index
@@ -20,6 +20,7 @@ class JobsController < ApplicationController
     else
       Job.published.recent
     end
+    @jobs = Job.recent.paginate(:page => params[:page], :per_page => 5)
 
   end
 

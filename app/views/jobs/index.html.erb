@@ -4,11 +4,11 @@
 <h2 align="center", style="color:#5BBD9A"> Find An Amazing Opportunity Here</h2>
 
 <div class="pull-right">
-  <%= link_to("Add a job", new_job_path, :class => "btn btn-default", :style =>"background-color:#008F5D") %>
+  <%= link_to("Add a job", new_job_path, :class => "btn btn-success") %>
 </div>
 
 <div class="dropdown clearfix pull-right">
-  <button class="btn btn-default dropdown-toggle" type="button" style="background-color:#008F5D" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     Sort
     <span class="caret"></span>
   </button>
@@ -59,3 +59,7 @@
   <% end %>
 </tbody>
 </table>
+
+<div class="text-center">
+  <%= will_paginate @jobs %>
+</div>
