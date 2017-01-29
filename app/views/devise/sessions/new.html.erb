@@ -2,28 +2,46 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-    <label for="email" class="cols-sm-2 control-label">Your Email</label></br>
-    <div class="input-group">
-    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-        <%= f.email_field :email, required: true, placeholder: "Enter your Email", autofocus: true %>
-      </div>
-    </br>
-
-    <label for="password" class="cols-sm-2 control-label">Password</label>
-    <div class="input-group">
-      <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-        <%= f.password_field :password, required: true, placeholder: "Enter your password", autocomplete: "off" %>
-      </div>
-    <%= f.check_box :remember_me, as: :boolean if devise_mapping.rememberable? %> <label> Remember me </label>
-
-
-</br>
-</br>
-
-  <div class="actions">
-    <%= f.submit "Log in", class: "btn btn-success btn-ms login-button" %>
+<label for="email" class="cols-sm-2 control-label">Your Email</label></br>
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+    <%= f.email_field :email, required: true, placeholder: "Enter your Email", autofocus: true %>
   </div>
+</br>
+
+<label for="password" class="cols-sm-2 control-label">Password</label>
+<div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+    <%= f.password_field :password, required: true, placeholder: "Enter your password", autocomplete: "off" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+  </div>
+
+
+
+        <div class="form-group">
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember me </label>
+          </div>
+        </div>
+
+
+</br>
+</br>
+
+<div class="form-group">
+  <div class="actions">
+    <%= f.submit "Log in", class: "btn btn-success btn-ms login-button active" %>
+  </div>
+</div>
+</div>
 <% end %>
 </br>
 
+
+<div class="form-group">
 <%= render "devise/shared/links" %>
+</div>
